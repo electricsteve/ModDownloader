@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "ModDownloader",
+  "version": "${version}",
+
+  "name": "ModDownloader",
+  "description": "Downlaods and updates mods from Modrinth",
+  "authors": [],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [
+    "ModDownloader.mixins.json",
+    "ModDownloader-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": ">=1.20.1"
+  }
+}
