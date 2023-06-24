@@ -21,10 +21,14 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+    forgeRuntimeLibrary group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
 }
 
 processResources {
     inputs.property "version", project.version
+
 
     filesMatching("META-INF/mods.toml") {
         expand "version": project.version
@@ -42,6 +46,7 @@ remapJar {
     inputFile.set shadowJar.archiveFile
     dependsOn shadowJar
     archiveClassifier.set(null)
+    archiveClassifier = 'forge'
 }
 
 jar {

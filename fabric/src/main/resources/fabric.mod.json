@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "ModDownloader",
+  "id": "moddownloader",
   "version": "${version}",
 
   "name": "ModDownloader",

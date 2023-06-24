@@ -1,11 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "electricsteve.moddownloader.mixin.forge",
+  "package": "electricsteve.moddownloader.Mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
+    "MixinTitleScreen"
   ],
   "injectors": {
     "defaultRequire": 1

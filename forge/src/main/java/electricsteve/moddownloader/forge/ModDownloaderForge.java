@@ -10,6 +10,6 @@ public class ModDownloaderForge {
     public ModDownloaderForge() {
 		// Submit our event bus to let architectury register our content on the right time
         EventBuses.registerModEventBus(ModDownloader.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
-            ModDownloader.init();
+        ModDownloader.init();
     }
 }
