@@ -1,8 +1,6 @@
 package electricsteve.moddownloader.GetModrinth;
 
-import dev.architectury.platform.Mod;
 import electricsteve.moddownloader.ModDownloader;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -39,15 +37,15 @@ public class GetFromModrinth {
                 //Close the scanner
                 scanner.close();
 
-                System.out.println(informationString);
+                ModDownloader.LOGGER.info(String.valueOf(informationString));
 
 
                 //JSON simple library Setup with Maven is used to convert strings to JSON
                 JSONParser parse = new JSONParser();
-                JSONArray dataObject = (JSONArray) parse.parse(String.valueOf(informationString));
+                JSONObject dataObject = (JSONObject) parse.parse(String.valueOf(informationString));
 
-                //Get the first JSON object in the JSON array
-                ModDownloader.LOGGER.debug((String) dataObject.get(0));
+                //Print the slug value of the response
+                ModDownloader.LOGGER.info("Modrinth API Response: " + dataObject.get("slug"));
             }
         } catch (Exception e) {
             e.printStackTrace();

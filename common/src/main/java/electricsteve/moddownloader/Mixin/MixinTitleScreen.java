@@ -22,8 +22,9 @@ public class MixinTitleScreen extends Screen {
 
         int l = this.height / 4 + 48;
 
-        this.addRenderableWidget(Button.builder(Component.translatable("menu.options"), (button) -> {
-            this.minecraft.setScreen(new OptionsScreen(this, this.minecraft.options));
-        }).bounds(this.width / 2 + 104, l + 24 * 2, 20, 20).build());
+        // Add a button to Title Screen that gets the newest version of the mod from Modrinth
+        this.addRenderableWidget(Button.builder(Component.translatable("menu.moddownloader.moddownloadergui"), (button) -> {
+            electricsteve.moddownloader.GetModrinth.GetFromModrinth.GetNewestVersion("P7dR8mSH");
+        }).bounds(this.width / 2 + 104, l + 24 * 2, 40, 20).build());
     }
 }
