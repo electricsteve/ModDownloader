@@ -1,5 +1,7 @@
 {
   "menu.moddownloader.moddownloadergui" : "MD GUI",
   "downloadscreen.moddownloader.title" : "Download Mods",
-    "downloadscreen.moddownloader.getLatest" : "Get the latest version"
+  "downloadscreen.moddownloader.getLatest" : "Get the latest version",
+  "downloadscreen.moddownloader.modrinthid" : "Search For mods using Modrinth ID"
+
 }

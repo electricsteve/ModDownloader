@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class GetFromModrinth {
-    public static void GetNewestVersion(String projectid) {
+    public static String GetNewestVersion(String projectid) {
 
         try {
 
@@ -25,8 +25,7 @@ public class GetFromModrinth {
             // 200 OK
             if (responseCode != 200) {
                 throw new RuntimeException("HttpResponseCode: " + responseCode);
-            }
-            else {
+            } else {
 
                 StringBuilder informationString = new StringBuilder();
                 Scanner scanner = new Scanner(url.openStream());
@@ -45,10 +44,13 @@ public class GetFromModrinth {
                 JSONObject dataObject = (JSONObject) parse.parse(String.valueOf(informationString));
 
                 //Print the slug value of the response
-                ModDownloader.LOGGER.info("Modrinth API Response: " + dataObject.get("slug"));
+                String slugValue = (String) dataObject.get("slug");
+                return slugValue;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 }
+
