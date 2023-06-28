@@ -1,4 +1,5 @@
 {
   "menu.moddownloader.moddownloadergui" : "MD GUI",
-  "downloadscreen.moddownloader.title" : "Download Mods"
+  "downloadscreen.moddownloader.title" : "Download Mods",
+    "downloadscreen.moddownloader.getLatest" : "Get the latest version"
 }

@@ -1,5 +1,6 @@
 package electricsteve.moddownloader.Mixin;
 
+import electricsteve.moddownloader.gui.DownloadScreen;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;
@@ -23,7 +24,7 @@ public class MixinTitleScreen extends Screen {
 
         // Add a button to Title Screen that gets the newest version of the mod from Modrinth
         this.addRenderableWidget(Button.builder(Component.translatable("menu.moddownloader.moddownloadergui"), (button) -> {
-            electricsteve.moddownloader.GetModrinth.GetFromModrinth.GetNewestVersion("P7dR8mSH");
+            this.minecraft.setScreen(new DownloadScreen(this, this.minecraft.options)); // Open the DownloadScreen
         }).bounds(this.width / 2 + 104, l + 24 * 2, 40, 20).build());
     }
 }
