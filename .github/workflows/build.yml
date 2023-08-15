@@ -7,12 +7,7 @@
 
 name: Build project
 
-on:
-  push:
-    branches: [ "mc1.20.1/dev" ]
-  pull_request:
-    branches: [ "mc1.20.1/dev" ]
-
+on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
 
